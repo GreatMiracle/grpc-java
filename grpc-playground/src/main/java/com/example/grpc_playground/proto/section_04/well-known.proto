@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package sec04;
+
+option java_package = "com.example.grpc_playground.models.sec04";
+option java_multiple_files = true;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+message User {
+  google.protobuf.Int32Value age = 1;       // Sử dụng wrapper type cho int32
+  google.protobuf.Timestamp login_time = 2; // Sử dụng timestamp cho thời gian đăng nhập
+}

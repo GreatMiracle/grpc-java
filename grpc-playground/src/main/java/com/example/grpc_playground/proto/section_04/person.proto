@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package section04;
+package sec04;
 
 option java_package = "com.example.grpc_playground.models.sec04";
 option java_multiple_files = true;

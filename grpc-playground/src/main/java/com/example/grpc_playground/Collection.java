@@ -1,7 +1,5 @@
 package com.example.grpc_playground;
 
-
-import com.example.grpc_playground.models.sec03.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
@@ -14,26 +12,26 @@ public class Collection {
 		
 //		SpringApplication.run(GrpcPlaygroundApplication1.class, args);
 		// Tạo các đối tượng Book
-		var book1 = Book.newBuilder()
+		var book1 = com.example.grpc_playground.models.sec03.Book.newBuilder()
 			.setTitle("Harry Potter Part 1")
 			.setAuthor("J.K. Rowling")
 			.setPublicationYear(1997)
 			.build();
 
-		var book2 = Book.newBuilder()
+		var book2 = com.example.grpc_playground.models.sec03.Book.newBuilder()
 			.setTitle("Harry Potter Part 2")
 			.setAuthor("J.K. Rowling")
 			.setPublicationYear(1998)
 			.build();
 
-		var book3 = Book.newBuilder()
+		var book3 = com.example.grpc_playground.models.sec03.Book.newBuilder()
 			.setTitle("Harry Potter Part 3")
 			.setAuthor("J.K. Rowling")
 			.setPublicationYear(1999)
 			.build();
 
 		// Tạo Library chứa danh sách các Book
-		var library = Library.newBuilder()
+		var library = com.example.grpc_playground.models.sec03.Library.newBuilder()
 			.setName("Fantasy Library")
 			.addBooks(book1)
 			.addBooks(book2)
@@ -55,7 +53,7 @@ public class Collection {
 		System.out.println("First book: " + library.getBooks(0).getTitle());
 
 		// Tạo Library chứa danh sách các Book
-		var libraryList = Library.newBuilder()
+		var libraryList = com.example.grpc_playground.models.sec03.Library.newBuilder()
 			.setName("fantasy library")
 			.addAllBooks(List.of(book1, book2, book3))
 			.build();
