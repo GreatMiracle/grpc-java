@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc_playground.models.sec01";
+option java_multiple_files = true;
+
+package section_01;
+
+message Person {
+  string name = 1;
+  int32 age = 2;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package sec03;
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc_playground.models.sec03";
+
+// Định nghĩa thông tin xe ô tô
+message CarType {
+  string make = 1;  // Hãng xe (Honda, Toyota)
+  string model = 2; // Mẫu xe (Civic, Accord)
+  int32 year = 3;   // Năm sản xuất
+}
+
+// Định nghĩa thông tin đại lý xe hơi với ánh xạ năm -> xe
+message Dealer {
+  map<int32, CarType> inventory = 1;
+}
+
+
+// Danh sách xe hơi theo năm
+message CarList {
+  repeated CarType cars = 1; // Danh sách xe
+}
+
+// Định nghĩa inventory với key là năm và value là danh sách xe
+message Inventory {
+  map<int32, CarList> inventory = 1;
+}

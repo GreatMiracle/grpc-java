@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc_playground.models";
+option java_multiple_files = true; //tránh tạo lồng trong lớp outer
+
+package section_02;
+
+message Person {
+  string name = 1;
+  int32 age = 2;
+  double balance = 3;
+}

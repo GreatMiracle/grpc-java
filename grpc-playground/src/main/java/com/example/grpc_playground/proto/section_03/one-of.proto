@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package sec03;
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc_playground.models.sec03";
+
+message Email {
+  string address = 1;
+  string password = 2;
+}
+
+message Phone {
+  string number = 1;
+  string code = 2;
+}
+
+message Credentials{
+  oneof login_type { //để chỉ ra rằng chỉ một trong hai kiểu (Email hoặc Phone) sẽ được thiết lập.
+    Email email = 1;
+    Phone phone = 2;
+  }
+}
